@@ -78,6 +78,7 @@
                     <p><input type="submit" value="Check" onclick="return markPointFromServer(x_out.value, y_out.value, r_out.value)"></p>
                 </form>
             </div>
+            <div onchange="markPointFromServer(x_out.value, y_out.value, r_out.value)"></div>
         </div>
     </div>
     <p class="centered" id="error"></p>

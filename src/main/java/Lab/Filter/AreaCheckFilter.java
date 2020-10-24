@@ -20,7 +20,7 @@ public class AreaCheckFilter implements Filter {
         PrintWriter out = resp.getWriter();
 
         try {
-            int x = Integer.parseInt(req.getParameter("x_h").trim());
+            double x = Double.parseDouble(req.getParameter("x_h").trim());
             double y = Double.parseDouble(req.getParameter("y_h"));
             int r = Integer.parseInt(req.getParameter("r_h"));
 
@@ -48,8 +48,8 @@ public class AreaCheckFilter implements Filter {
 
     }
 
-    private boolean validate(int x, double y, double r) {
-        boolean checkX = Arrays.binarySearch(xValues, x) > -1;
+    private boolean validate(double x, double y, double r) {
+        boolean checkX = Arrays.binarySearch(xValues, (int) x) > -1;
         boolean checkY = y >= -5 && y <= 3;
         boolean checkR = Arrays.binarySearch(rValues, r) > -1;
         return checkX && checkY && checkR;

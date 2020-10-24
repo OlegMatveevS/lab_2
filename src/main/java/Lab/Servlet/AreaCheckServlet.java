@@ -44,7 +44,7 @@ public class AreaCheckServlet extends HttpServlet {
 
         if (!load) {
             try {
-                int x = Integer.parseInt(request.getParameter("x_h").trim());
+                double x = Double.parseDouble(request.getParameter("x_h").trim());
                 double y = Double.parseDouble(request.getParameter("y_h"));
                 int r = Integer.parseInt(request.getParameter("r_h"));
 

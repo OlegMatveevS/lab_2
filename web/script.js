@@ -45,12 +45,16 @@ function clickCanvas(R) {
 
 function markPointFromServer(x, y, r) {
     console.log('try to mark point from server with x:' + x + ', y:' + y + ', r:' + r);
+    x_h_id.value = x;
+    x_out.value = x;
+    y_h_id.value = y;
+    y_out.value = y;
     if (!checkAllParameters(x, y, r)) {
         error('Wrong parameters');
         return false;
     } else {
         fetch("./hit?hit=true&x_h=" + encodeURI(x) + "&y_h=" + encodeURI(y) + "&r_h=" + encodeURI(r), {
-            method: 'POST',
+            method: 'GET',
             headers: {
                 'Content-Type': 'text/plain;charset=UTF-8'
             }
@@ -59,6 +63,7 @@ function markPointFromServer(x, y, r) {
             .then(hit=>markPoint(x, y, r, hit));
         return true;
     }
+
 }
 
 function markPoint(x, y, r, hit) {
@@ -269,18 +274,6 @@ function isNumber(n) {
     return !isNaN(parseFloat(n)) && !isNaN(n - 0)
 }
 
-
-function checkOrientation() {
-    console.log('point1');
-    let gname = document.getElementById('gname');
-    if (gname === null || gname.value === '' || gname.value === 'afanas') {
-        markAsWrong(gname);
-        return;
-    }
-    fetch('checkOrientation?gname='+encodeURI(gname.value))
-        .then(resp => resp.text())
-        .then(text => hiddenFunction(text));
-}
 
 function markAsWrong(node) {
     node.style.backgroundColor = "red";

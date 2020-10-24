@@ -3,13 +3,13 @@ package Lab.Bean;
 import java.io.Serializable;
 
 public class Point implements Serializable {
-    private int x;
+    private double x;
     private double y;
     private double R;
     private boolean hit;
     private int n;
 
-    public Point(int x, double y, double r, int n){
+    public Point(double x, double y, double r, int n){
         this.x = x;
         this.y = y;
         this.R = r;
@@ -17,7 +17,7 @@ public class Point implements Serializable {
         hit = checkArea(x, y, R);
     }
 
-    public int getX() {
+    public double getX() {
         return x;
     }
 
