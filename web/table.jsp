@@ -31,6 +31,7 @@
         <td><%=point.getY() %></td>
         <td><%=point.getR()%></td>
         <td><%=point.isHit() ? "True" : "False" %></td>
+        <td><button onclick='parent.markPoint(<%=point.getX() %>, <%=point.getY() %>, <%=point.getR() %>, <%=point.isHit() %>)'>+</button></td>
     </tr>
     <%}%>
 
