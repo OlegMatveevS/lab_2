@@ -8,7 +8,7 @@ import java.util.Arrays;
 public class AreaCheckFilter implements Filter {
 
     private int[] xValues = {-3, -2, -1, 0, 1, 2, 3, 4, 5};
-    private double[] rValues = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+    private double[] rValues = {1,2,3,4,5};
 
     public void init(FilterConfig arg0) {}
 
@@ -31,17 +31,10 @@ public class AreaCheckFilter implements Filter {
         } catch (Exception e) {
             out.println(("<!DOCTYPE html>\n" +
                     "<html>\n" +
-                    "<head>\n" +
-                    "\t<title>Тупо бан</title>\n" +
-                    "\t<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">\n" +
-                    "\t<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\">\n" +
                     "</head>\n" +
-                    "<body style=\"text-align: center; background-color: black; background-image: none;\">" +
-                    "<div style=\"margin-top: 60px;\"><span class=\"main-text\"Перебор</span></div>" +
+                    "<body>" +
                     "<div class=\"centered\">" +
-                        "<script>" +
-                    "parent.ban();" +
-                    "</script>" +
+                    "ВЫХОД ЗА ДОПСУТИМЫЕ ЗНАЧЕНИЯ" +
                     "</div>" +
                     "</body> </html>"));
         }

@@ -61,7 +61,7 @@
             <p>
             <table class="no-letter-spacing">
             <select name="select" class="rb" onchange="setRadius(this.value)">
-                <option value="1" id="r_1">1</option>
+                <option selected value="1" id="r_1">1</option>
                 <option value="2" id="r_2">2</option>
                 <option value="3" id="r_3">3</option>
                 <option value="4" id="r_4">4</option>
