@@ -14,6 +14,7 @@
 <jsp:useBean id="pointsBean" class="Lab.Bean.PointsTableBean" scope="session"/>
 <div class="block auto-margin" id="head">
     Matveev Oleg<br>
+    Innokentiev Artem<br>
     Group: P3213, variant number: 21886<br>
 </div>
 <div class="block auto-margin flex">

@@ -34,7 +34,7 @@ public class AreaCheckFilter implements Filter {
                     "</head>\n" +
                     "<body>" +
                     "<div class=\"centered\">" +
-                    "ВЫХОД ЗА ДОПСУТИМЫЕ ЗНАЧЕНИЯ" +
+                    "ВЫХОД ЗА ДОПУСТИМЫЕ ЗНАЧЕНИЯ" +
                     "</div>" +
                     "</body> </html>"));
         }
