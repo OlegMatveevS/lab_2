@@ -67,7 +67,17 @@ function markPointFromServer(x, y, r) {
 }
 
 function Clear (){
-    let r = 0;
+    if (is_default_graphic) {
+        console.log('error: R is not set');
+        createGraphic('canvas', 0);
+        let canvas = document.getElementById("canvas"), context = canvas.getContext("2d");
+        context.strokeStyle = "#000000";
+        context.fillStyle = "#ff0014";
+        context.font = '20px Arial';
+        context.fillText('You have to set ', 20, 50);
+        context.fillText('R parameter', 20, 70);
+        return;
+    }
     r = r_h_id.value;
     createGraphic('canvas', r);
 }
