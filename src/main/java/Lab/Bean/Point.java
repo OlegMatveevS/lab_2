@@ -41,7 +41,7 @@ public class Point implements Serializable {
 
         boolean circle = ((Math.pow(x, 2) + Math.pow(y, 2) <= (Math.pow(r , 2))) && y >= 0 && x <= 0);
         boolean square = (-x >= (-r) && y >= (-r) && y <= 0 && x >= 0);
-        boolean triangle = (y <= 0 && x <= 0 && x + y >= -r);;
+        boolean triangle = (y <= 0 && x <= 0 && x + y >= -r);
 
         return square || triangle || circle;
     }

@@ -66,11 +66,39 @@ function markPointFromServer(x, y, r) {
 
 }
 
+function Clear (){
+    let r = 0;
+    r = r_h_id.value;
+    createGraphic('canvas', r);
+}
+
 function markPoint(x, y, r, hit) {
     console.log('Marking point ' + x + ', ' + y + ', ' + r + ', ' + hit);
     createGraphic('canvas', r);
     let canvas = document.getElementById("canvas"), context = canvas.getContext("2d");
 
+    context.beginPath();
+    context.rect(Math.round(150 + ((x / r) * 130)) - 3, Math.round(150 - ((y / r) * 130)) - 3, 6, 6);
+    context.closePath();
+    context.strokeStyle = 'black';
+
+    let color = 'red';
+    hit = hit.toString();
+
+    if (hit.trim() === "true") {
+        color = 'lime';
+    }
+
+    context.fillStyle = color;
+    context.fill();
+    context.stroke();
+}
+
+function markPointTwo(x, y, r, hit) {
+    console.log('Marking point ' + x + ', ' + y + ', ' + r + ', ' + hit);
+    let canvas = document.getElementById("canvas"), context = canvas.getContext("2d");
+
+    r = r_h_id.value;
     context.beginPath();
     context.rect(Math.round(150 + ((x / r) * 130)) - 3, Math.round(150 - ((y / r) * 130)) - 3, 6, 6);
     context.closePath();

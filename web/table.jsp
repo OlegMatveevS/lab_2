@@ -12,17 +12,16 @@
 </head>
 <body>
 <table class="results block centered">
-    <tr> <th>N</th> <th>X</th> <th>Y</th> <th>R</th> <th><b>Результат</b></th></tr>
+    <tr> <th>N</th> <th>X</th> <th>Y</th> <th>R</th> <th><b>Результат</b><td><button onclick='parent.Clear()'>-</button></td>
+        </tr>
     <%
     List<Point> list = pointsBean.getPoints();
-
         while (list.size() > 10) {
             list.remove(0);
         }
 
         List<Point> reversed = new ArrayList<>(list);
         Collections.reverse(reversed);
-
         for (Point point : reversed) {
         %>
     <tr>
@@ -31,7 +30,7 @@
         <td><%=point.getY() %></td>
         <td><%=point.getR()%></td>
         <td><%=point.isHit() ? "True" : "False" %></td>
-        <td><button onclick='parent.markPoint(<%=point.getX() %>, <%=point.getY() %>, <%=point.getR() %>, <%=point.isHit() %>)'>+</button></td>
+        <td><button onclick='parent.markPointTwo(<%=point.getX() %>, <%=point.getY() %>, <%=point.getR() %>, <%=point.isHit() %>)'>+</button></td>
     </tr>
     <%}%>
 
