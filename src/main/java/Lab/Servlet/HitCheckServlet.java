@@ -27,7 +27,6 @@ public class HitCheckServlet extends HttpServlet {
     }
 
     protected void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
-
         try {
             double x = Double.parseDouble(request.getParameter("x_h").trim());
             double y = Double.parseDouble(request.getParameter("y_h").trim());

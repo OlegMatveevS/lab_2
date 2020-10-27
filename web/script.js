@@ -45,10 +45,10 @@ function clickCanvas(R) {
 
 function markPointFromServer(x, y, r) {
     console.log('try to mark point from server with x:' + x + ', y:' + y + ', r:' + r);
-    x_h_id.value = x;
-    x_out.value = x;
-    y_h_id.value = y;
-    y_out.value = y;
+    x_h_id.value = (x * 1000 / 1000).toFixed(2);
+    x_out.value = (x * 1000 / 1000).toFixed(2);
+    y_h_id.value = (y * 1000 / 1000).toFixed(2);
+    y_out.value = (y * 1000 / 1000).toFixed(2);
     if (!checkAllParameters(x, y, r)) {
         error('Wrong parameters');
         return false;
